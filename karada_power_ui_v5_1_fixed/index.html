@@ -1,0 +1,38 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>からだパワー v5.1</title><link rel="stylesheet" href="style.css"><meta name="theme-color" content="#fff8f2">
+<link rel="manifest" href="manifest.webmanifest">
+</head><body>
+<div class="app-shell">
+<header class="topbar"><div><div class="eyebrow">たべもの × からだ</div><h1>🌈 からだパワー</h1></div>
+<div class="child-switch"><button class="child-btn active" data-child="長女">👧 長女</button><button class="child-btn" data-child="次女">👧 次女</button></div></header>
+<nav class="tabs"><button class="tab active" data-view="home">🏠 早見表（はやみひょう）</button><button class="tab" data-view="foods">🍎 食（た）べもの図鑑（ずかん）</button><button class="tab" data-view="today">🍽️ 今日食べた</button></nav>
+<main>
+<section id="view-home" class="view active">
+<div class="hero"><div><span class="pill">小学生（しょうがくせい）モード</span><h2>今日（きょう）は、どのパワーを集（あつ）める？</h2><p>気（き）になるパワーを押（お）すと、そのパワーが得意（とくい）な食（た）べものが見（み）つかるよ。</p></div><div class="hero-orb">🧠✨💪🦴🛡️</div></div>
+<div id="power-grid" class="power-grid"></div></section>
+
+<section id="view-foods" class="view">
+<div class="section-head"><div><h2>🍎 食（た）べもの図鑑（ずかん）</h2><p>食（た）べものを押（お）すと、5つのパワーが見（み）えるよ。</p></div><input id="food-search" class="search" placeholder="食（た）べものを探（さが）す…"></div>
+<div id="category-chips" class="chips"></div>
+<div class="select-toolbar">
+  <button id="batch-mode-btn" class="ghost-btn">☑️ まとめて選ぶ</button>
+  <div id="batch-actions" class="batch-actions hidden">
+    <span id="batch-count">0こ選択</span>
+    <button id="batch-cancel" class="ghost-btn">やめる</button>
+    <button id="batch-add" class="primary-btn">今日食べたものに追加</button>
+  </div>
+</div>
+<div id="food-grid" class="food-grid"></div></section>
+
+<section id="view-today" class="view">
+<div class="section-head"><div><h2>🍽️ 今日食べたもの</h2><p><span id="today-child">長女</span>のパワーを見（み）てみよう。</p></div><button id="clear-today" class="ghost-btn">入力を直す</button></div>
+<div class="notice">※ このゲージは「栄養（えいよう）が100％足（た）りた」という意味（いみ）ではありません。いろいろな食（た）べものを食（た）べたかを見（み）る、ゲームのパワーです。</div>
+<div class="today-layout"><div class="today-card"><h3>今日の5大パワー</h3><div id="today-bars"></div><div id="today-hint" class="hint"></div></div>
+<div class="today-card"><h3>食べたもの</h3><div id="today-foods" class="today-foods"></div><button class="primary-btn" data-jump="foods">＋ 食べたものを選ぶ</button></div></div>
+</section>
+</main></div>
+
+<div id="modal" class="modal hidden"><div class="modal-backdrop" data-close="food"></div><div class="modal-card"><button class="modal-close" data-close="food">×</button><div id="modal-content"></div></div></div>
+<div id="nutrient-modal" class="modal hidden"><div class="modal-backdrop" data-close="nutrient"></div><div class="modal-card nutrient-card"><button class="modal-close" data-close="nutrient">×</button><div id="nutrient-content"></div></div></div>
+<script src="data.js"></script><script src="app.js"></script></body></html>
